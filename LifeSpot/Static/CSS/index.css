@@ -10,8 +10,13 @@
 }
 
 header {
+    color: black;
     padding-left: 1%;
     padding-top: 1.2%;
+}
+
+#header-index {
+    color: #44453f;
 }
 
 footer {
