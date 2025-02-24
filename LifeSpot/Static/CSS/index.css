@@ -24,6 +24,13 @@ footer {
     bottom: 0;
     font-size: medium;
     color: dimgrey;
+    line-height: 66%
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: grey;
+
 }
 
 aside {
@@ -43,7 +50,7 @@ body {
     padding-left: 11%;
 }
 
-header, footer, aside, body, .navbar, .video-container {
+header, footer, aside, body, .navbar, .video-container, a {
     font-family: "Helvetica 65 Medium", sans-serif;
 }
 
