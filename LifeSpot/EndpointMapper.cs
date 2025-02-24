@@ -39,6 +39,24 @@ namespace LifeSpot
                 await context.Response.WriteAsync(html.ToString());
             });
         }
+
+        /// <summary>
+        ///  Маппинг Иконок
+        /// </summary>
+        public static void MapIcons(this IEndpointRouteBuilder builder)
+        {
+            var iconFiles = new[] { "magnifier.svg" };
+
+            foreach (var fileName in iconFiles)
+            {
+                builder.MapGet($"/Static/Icons/{fileName}", async context =>
+                {
+                    var iconPath = Path.Combine(Directory.GetCurrentDirectory(), "Static", "Icons", fileName);
+                    var icon = await File.ReadAllTextAsync(iconPath);
+                    await context.Response.WriteAsync(icon);
+                });
+            }
+        }
     }
 }
 

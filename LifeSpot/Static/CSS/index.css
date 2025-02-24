@@ -1,4 +1,8 @@
-﻿.video-container {
+﻿* {
+    box-sizing: border-box;
+}
+
+.video-container {
     display: inline-block;
     padding-left: 1%;
     padding-top: 1%;
@@ -20,12 +24,13 @@ header {
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
     font-size: medium;
     color: dimgrey;
     line-height: 66%; 
     padding-left: 1%;
+    display: inline-block;
 }
 
 a, a:visited {
@@ -34,10 +39,14 @@ a, a:visited {
 
 }
 
+    a:hover {
+        color: #A3D0C3;
+    }
+
 aside {
     height: 100%; /* Высота в полный размер. Этот параметр можно убрать, если вы хотите выставлять высоту автоматически */
-    width: 10%;
-    position: absolute; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
+    width: 200px;
+    position: fixed; /* Фиксированная позиция сайд-бара. Так он будет оставаться на месте при скроллинге */
     z-index: 1; /* Сайд-бар будет поверх остальных элементов */
     top: 0; /* Сайдбар будет в самой верхней части страницы */
     left: 0;
@@ -48,7 +57,7 @@ aside {
 }
 
 body {
-    padding-left: 11%;
+    padding-left: 200px;
 }
 
 header, footer, aside, body, .navbar, .video-container, a {
@@ -58,3 +67,52 @@ header, footer, aside, body, .navbar, .video-container, a {
 header, footer, body, .video-container {
     background-color: linen;
 }
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+    float: right;
+}
+
+.d1 {
+    background: #A3D0C3;
+    width: 100%;
+    display:inline-block;
+}
+
+    .d1 input {
+        width: 100%;
+        height: 42px;
+        padding-left: 10px;
+        border: 2px solid #7BA7AB;
+        border-radius: 5px;
+        outline: none;
+        background: #F9F0DA;
+        color: #9E9C9C;
+    }
+
+    .d1 input:focus {
+        color: red;
+        border-style: dashed;
+    }
+
+    .d1 button {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 42px;
+        height: 42px;
+        border: none;
+        background: #7BA7AB;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        padding: 9px;
+    }
+
+.magnifier {
+    fill: white;
+    max-width: 100%;
+}
+
+
