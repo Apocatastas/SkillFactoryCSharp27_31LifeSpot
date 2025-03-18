@@ -38,41 +38,31 @@ namespace LifeSpot
             {
                 var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "index.html");
                 var viewText = await File.ReadAllTextAsync(viewPath);
-
-                // Загружаем шаблон страницы, вставляя в него элементы
                 var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                     .Replace("<!--SIDEBAR-->", sideBarHtml)
                     .Replace("<!--FOOTER-->", footerHtml);
-
                 await context.Response.WriteAsync(html.ToString());
             });
 
             builder.MapGet("/testing", async context =>
             {
                 var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "testing.html");
-
-                // Загружаем шаблон страницы, вставляя в него элементы
                 var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                     .Replace("<!--SIDEBAR-->", sideBarHtml)
                     .Replace("<!--FOOTER-->", footerHtml);
-
                 await context.Response.WriteAsync(html.ToString());
             });
 
             builder.MapGet("/about", async context =>
             {
                 var viewPath = Path.Combine(Directory.GetCurrentDirectory(), "Views", "about.html");
-
-                // Загружаем шаблон страницы, вставляя в него элементы
                 var html = new StringBuilder(await File.ReadAllTextAsync(viewPath))
                     .Replace("<!--SIDEBAR-->", sideBarHtml)
                     .Replace("<!--FOOTER-->", footerHtml);
-
                 await context.Response.WriteAsync(html.ToString());
             });
         }
         
-
         /// <summary>
         ///  Маппинг JS
         /// </summary>
@@ -97,7 +87,6 @@ namespace LifeSpot
         public static void MapIcons(this IEndpointRouteBuilder builder)
         {
             var iconFiles = new[] { "magnifier.svg" };
-
             foreach (var fileName in iconFiles)
             {
                 builder.MapGet($"/Static/Icons/{fileName}", async context =>
