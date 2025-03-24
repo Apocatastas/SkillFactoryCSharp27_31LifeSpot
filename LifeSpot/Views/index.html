@@ -6,12 +6,14 @@
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" charset="utf-8" src="../Static/JS/index.js"></script>
     <script type="text/javascript" charset="utf-8" src="../Static/JS/filter.js"></script>
+
     <script>
-        sessionLog();
+        handleSession(logger, checker);
         const inputParseFunction = function () {
-                                                    return document.getElementsByTagName('input')[0].value.toLowerCase();
-                                               }
+            return document.getElementsByTagName('input')[0].value.toLowerCase();
+        }
     </script>
+
 </head>
 <body>
     <header id="header-index">
