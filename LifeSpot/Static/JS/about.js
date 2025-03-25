@@ -35,3 +35,33 @@ const writeReview = review => {
         `<p>${review['text']}</p>` +
         '</div>';
 }
+function Comment() {
+    this.author = prompt("Как вас зовут ?")
+    if (this.author == null) {
+        this.empty = true
+        return
+    }
+    this.text = prompt("Оставьте отзыв")
+    if (this.text == null) {
+        this.empty = true
+        return
+    }
+    this.date = new Date().toLocaleString()
+}
+
+function addComment() {
+    let comment = new Comment()
+    if (comment.empty) {
+        return;
+    }
+
+    let enableLikes = confirm('Разрешить пользователям оценивать ваш отзыв?')
+
+    if (enableLikes) {
+        let review = Object.create(comment)
+        review.rate = 0;
+        writeReview(review)
+    } else {
+        writeReview(comment)
+    }
+}
