@@ -73,3 +73,42 @@ function addLike(id) {
     array[array.length - 1] = `${resultNum}`
     element.innerText = array.join(' ')
 }
+
+var slideIndex = 1;
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlides(slideIndex);
+})
+
+function nextSlide() {
+    showSlides(slideIndex += 1);
+}
+
+function prevSlide() {
+    showSlides(slideIndex -= 1);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("myslides");
+    var dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) {
+        n = 1;
+        slideIndex = 1;
+    }
+    if (n < 1) {
+        n = slides.length
+        slideIndex = slides.length;
+    }
+    
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace("active", "");
+    }
+
+    slides[n - 1].style.display = "block";
+    dots[n - 1].classList.add("active");
+}
